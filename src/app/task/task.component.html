@@ -1,0 +1,114 @@
+
+<div class="banner container">
+    <div class="links">
+        <div class="back-link">
+            <img src="assets\back.svg" alt="">
+            
+            <a href="">Back To Home</a>
+        </div>
+        <div class="back-link">
+            <img src="assets\sign.svg" alt="">
+            <a href="">Login / Sign In</a>
+        </div>
+    </div>
+  </div>  
+
+
+
+
+
+  <div class="container">  
+    <div class="form-box container">
+       
+        <div class="form">
+          <div class="form-fields">
+    
+    <h1> Create a task </h1>  
+      
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">  
+        
+      <p>  
+        <label for="name">Task Type:</label>  
+        <input type="text" id="tasktype" name="tasktype" formControlName="tasktype" class="form-control"> 
+        <label for="name">Task created</label>
+        <input type="text" id="taskcreated" name="taskcreated" formControlName="taskcreated" class="form-control"> 
+        <label for="name">Payment status:</label>
+        <input type="text" id="paymentstatus" name="paymentstatus" formControlName="paymentstatus" class="form-control"> 
+      </p>  
+      
+      <table class="table table-bordered" formArrayName="users">  
+        <tbody>
+        <tr>  
+          <th colspan="3">Add User:</th>  
+          <th width="150px"><button type="button" (click)="addUser()" class="btn btn-primary">Add More</button></th>  
+        </tr>  
+        <tr *ngFor="let user of users().controls; let i=index" [formGroupName]="i">  
+          <td>  
+            Pickup :  
+              <input type="text" formControlName="pickup" class="form-control">  
+          </td>  
+          <td>  
+            Drop:  
+              <input type="text" formControlName="drop" class="form-control">  
+          </td>  
+          <td>  
+            Appointment booking:  
+             <input type="text" formControlName="appointmentbooking" class="form-control">  
+         </td>  
+          <td>  
+              <button (click)="removeUser(i)" class="btn btn-danger">Remove</button>  
+          </td>  
+        </tr> 
+        <tr *ngFor="let user of users().controls; let i=index" [formGroupName]="i">  
+            <td>  
+                Task assigned :  
+                <input type="text" formControlName="taskassinged" class="form-control">  
+            </td>  
+            <td>  
+                Task accepted:  
+                <input type="text" formControlName="taskaccepted" class="form-control">  
+            </td>  
+            <td>  
+                Task completed:  
+               <input type="text" formControlName="taskcompleted" class="form-control">  
+           </td>  
+            <td>  
+                <button (click)="removeUser(i)" class="btn btn-danger">Remove</button>  
+            </td>  
+          </tr> 
+          <tr *ngFor="let user of users().controls; let i=index" [formGroupName]="i">  
+            <td>  
+                Payment waiting :  
+                <input type="text" formControlName="paymentwaiting" class="form-control">  
+            </td>  
+            <td>  
+                Payment completed:  
+                <input type="text" formControlName="paymentcompleted" class="form-control">  
+            </td>  
+            <td>  
+                Payment rejected:  
+               <input type="text" formControlName="paymentrejected" class="form-control">  
+           </td>  
+            <td>  
+                <button (click)="removeUser(i)" class="btn btn-danger">Remove</button>  
+            </td>  
+          </tr> 
+    </tbody> 
+      </table>  
+     
+      <button class="submit">Submit</button>
+        
+    </form>  
+        
+    <br/>  
+    {{this.productForm.value | json}}  
+  </div>  
+</div>
+</div>
+
+  <footer>
+    <div class="copyright container"><br><br>
+        <p>2024 Copyright ©. All Rights Reserved Design and Development</p>
+    </div>
+  </footer>
+  

@@ -1,0 +1,108 @@
+<form [formGroup]="hospitalform">
+  <div class="banner container">
+    <div class="links">
+        <div class="back-link">
+            <img src="assets\back.svg" alt="">
+            
+            <a href="">Back To Home</a>
+        </div>
+        <div class="back-link">
+            <img src="assets\sign.svg" alt="">
+            <a href="">Login / Sign In</a>
+        </div>
+    </div>
+  </div> 
+  <div class="form-box container">  
+    <h1>Hospitality Team:</h1>
+    <div class="form">
+      <div class="form-fields">
+<mat-card>
+<mat-card-content>
+  <h3>Please fill the form to continue</h3> 
+  <mat-form-field class="mat-50">
+    
+    <mat-label>Patient Name</mat-label>
+    <input formControlName="patientname" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="mat-50">
+    <mat-label>Contact number</mat-label>
+    <input formControlName="contactnumber" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="mat-50">
+    <mat-label>Select task Type</mat-label>
+   
+   <!---- <input matInput> -->
+   <mat-select formControlName="selecttasktype">
+    <mat-option [value]="item" *ngFor="let item of Selecttasktype">{{item}}</mat-option>
+   </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="mat-50">
+    <mat-label>Drop Down Location</mat-label>
+   
+   <!---- <input matInput> -->
+   <mat-select formControlName="dropdownlocation">
+    <mat-option [value]="items" *ngFor="let items of dropdownlocation">{{items}}</mat-option>
+   </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="mat-50">
+    <mat-label>Lab Test Pick up</mat-label>
+   
+   <!---- <input matInput> -->
+   <mat-select formControlName="labtestpickup">
+    <mat-option [value]=" items1" *ngFor="let items1 of labtestpickup">{{items1}}</mat-option>
+   </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="mat-50">
+    <mat-label>Availble Time</mat-label>
+   
+   <!---- <input matInput> -->
+   <mat-select formControlName="availbletime">
+    <mat-option [value]=" items2" *ngFor="let items2 of AvailbleTime">{{items2}}</mat-option>
+   </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="mat-50">
+    <mat-label>Appointment Date</mat-label>
+    <input formControlName="appointmentdate" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="mat-50">
+    <mat-label>Appointment Time</mat-label>
+    <input formControlName="appointmenttime" matInput>
+  </mat-form-field>
+
+ <mat-form-field class="mat-50"   appearance="fill">
+   
+  <mat-label >Range Of Dates</mat-label>
+  
+  <input formControlName="rangeof dates" matInput [matDatepicker]="picker" (dateChange)="dateChanged($event)">
+  <mat-datepicker #picker ></mat-datepicker>
+
+ </mat-form-field >
+ <button mat-raised-button (click)="picker.open()">Open</button>
+
+</mat-card-content>
+
+<mat-form-field class="mat-50">
+    <mat-label>Description (Text Box)</mat-label>
+   
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+<mat-card-footer>
+  <button class="submit" (click)="show()">Submit</button>
+</mat-card-footer>
+</mat-card></div>
+</div>
+<footer>
+  <div class="copyright container"><br><br>
+      <p>2024 Copyright ©. All Rights Reserved Design and Development</p>
+  </div>
+
+</footer>
+</div>
+</form>

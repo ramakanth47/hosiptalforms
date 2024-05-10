@@ -1,0 +1,70 @@
+<form [formGroup]="invitationform" >
+  <div class="banner container">
+    <div class="links">
+        <div class="back-link">
+            <img src="assets\back.svg" alt="">
+            
+            <a href="">Back To Home</a>
+        </div>
+        <div class="back-link">
+            <img src="assets\sign.svg" alt="">
+            <a href="">Login / Sign In</a>
+        </div>
+    </div>
+  </div> 
+  <div class="form-box container">
+  <h1>Invitation Screens Form:</h1>
+  
+<mat-card>
+<mat-card-content>
+  <div></div>
+  <h3>Please fill the form to continue</h3>
+<mat-form-field class="mat-50">
+ 
+  <mat-label>Mobile Number</mat-label>
+  <input type="text" placeholder="Enter Mobile Number"   formControlName="mobilenumber" matInput>
+
+</mat-form-field>
+
+<mat-form-field class="mat-50">
+ 
+  <mat-label>Uniqueidforinvitation</mat-label>
+  <input type="text" placeholder="uniqueidforinvitation" formControlName="uniqueidforinvitation" matInput>
+ 
+</mat-form-field>
+
+<mat-form-field class="mat-50">
+ 
+  <mat-label input type="text" placeholder="Role Types">Role Types</mat-label>
+ 
+ <!---- <input matInput> -->
+ <mat-select  formControlName="roletypes">
+  <mat-option [value]="item" *ngFor="let item of RoleTypes">{{item}}</mat-option>
+ </mat-select>
+
+</mat-form-field>
+
+
+<button class="submit" (click)="show()">Submit</button>
+
+
+
+</mat-card-content>
+
+
+<mat-card-footer>
+
+ 
+
+  
+</mat-card-footer>
+
+</mat-card>
+
+<footer>
+  <div class="copyright container"><br><br>
+      <p>2024 Copyright ©. All Rights Reserved Design and Development</p>
+  </div>
+</footer>
+</div>
+</form>

@@ -1,0 +1,99 @@
+<form [formGroup]="paymentform">
+<div class="banner container">
+    <div class="links">
+        <div class="back-link">
+            <img src="assets\back.svg" alt="">
+            
+            <a href="">Back To Home</a>
+        </div>
+        <div class="back-link">
+            <img src="assets\sign.svg" alt="">
+            <a href="">Login / Sign In</a>
+        </div>
+    </div>
+  </div> 
+  <div class="form-box container">
+    <h1>payment Form:</h1> 
+    <div class="form">
+      <div class="form-fields">
+  <mat-card>
+    <mat-card-content>
+     <mat-form-field class="mat-50">
+        <mat-label>Paymentmethod</mat-label>
+        <mat-select formControlName="paymentmethod">
+          <mat-option [value]="item2" *ngFor="let item2 of paymentmethod">{{item2}}</mat-option>
+        </mat-select>
+     </mat-form-field>
+    
+     <mat-form-field class="mat-50">
+      <mat-label>Card Number:</mat-label>
+      <input type="text" id="card_number" name="card_number" maxlength="16" matInput  formControlName="cardnumber">
+      
+     </mat-form-field>
+
+     <mat-form-field class="mat-50">
+      <mat-label>Expiry Date:</mat-label>
+      <input type="text" id="expirydate" name="expirydate" placeholder="MM/YYYY" pattern="(0[1-9]|1[0-2])\/[0-9]{4}" required matInput formControlName="expirydate">
+     </mat-form-field>
+
+     <mat-form-field class="mat-50">
+      <mat-label>CVV:</mat-label>
+      <input id="cvv_code" name="cvv_code" maxlength="3" matInput formControlName="cvv">
+     </mat-form-field>
+
+     <mat-form-field class="mat-50">
+      <mat-label>Cardholder Name:</mat-label>
+      <input matInput formControlName="cardholdername">
+     </mat-form-field>
+
+     <mat-form-field class="mat-50">
+      <mat-label>Country:</mat-label>
+      <input matInput formControlName="country">
+     </mat-form-field>
+
+     <mat-form-field>
+      <mat-label>Billing Address:</mat-label>
+      <textarea rows="4" cols="50" matInput formControlName="billingaddress"></textarea> 
+     </mat-form-field>
+
+     <mat-form-field class="mat-50">
+      <mat-label>Phone Number:</mat-label>
+      <input matInput formControlName="phonenumber">
+     </mat-form-field>
+
+     <mat-form-field class="mat-50">
+      <mat-label>State:</mat-label>
+      <input matInput formControlName="state">
+     </mat-form-field>
+
+     <mat-form-field class="mat-50">
+      <mat-label>Postal Code:</mat-label>
+      <input matInput formControlName="postalcode">
+     </mat-form-field>
+
+     <mat-form-field class="mat-50">
+      <mat-label>Amount:</mat-label>
+      <input matInput formControlName="amount">
+     </mat-form-field>
+
+     <mat-form-field>
+      <mat-label>Description:</mat-label>
+     <textarea  rows="4" cols="50" matInput formControlName="description"></textarea>
+     </mat-form-field>
+
+    </mat-card-content>
+    <mat-card-footer>
+      <button class="submit"  (click)="show()" >Submit</button>
+    </mat-card-footer>
+  </mat-card></div>
+ </div>
+       
+    
+  <footer>
+    <div class="copyright container"><br><br>
+        <p>2024 Copyright ©. All Rights Reserved Design and Development</p>
+    </div>
+  
+  </footer>
+  </div>
+  </form>
